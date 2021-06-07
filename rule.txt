@@ -1,11 +1,11 @@
-﻿[Adblock Plus 2.0]
+[Adblock Plus 2.0]
 ! title: 乘风 广告过滤规则
-! Version: 202105151
+! Version: 202105281
 ! Expires: 2 days
 ! Homepage: https://bbs.kafan.cn/thread-1866845-1-1.html
 
 v.youku.com##.control-phonewatch,#right-title-ad-banner
-youku.com##+js(aeld,dblclick,ykplayer.switchFullscreen)
+v.youku.com##+js(aeld,dblclick,ykplayer.switchFullscreen)
 !v.youku.com##+js(nano-stb)
 ||atm.youku.com/
 ||cibntv.net/youku/$media
@@ -68,10 +68,6 @@ ys.da.mgtv.com
 ||tv.sohu.com/upload/csad/admaster/$image
 tv.sohu.com##.x-dl-shake.x-download-panel, #playerBar > div.area ~a
 
-1905.com##.ad-couplet,#hd-tab-label4,div.bd-tab.video-list:last-child
-||aliyun.com^$domain=1905.com
-||aliyuncs.com^$domain=1905.com
-
 @@||ark.letv.com/adx?adzone=
 @@||stat.letv.com/$script
 */letv-gug/$media,object-subrequest
@@ -114,6 +110,8 @@ dyjihe.com##.tempWrap
 haitur.com,haicaoys.com##.dplayer-web-fullscreen-fix .float-box
 haitur.com##.container:style(max-width:90%!important;width:90%!important)
 haitur.com##.left-content:style(width:77%!important)
+haitur.com##.dplayer-web-fullscreen-fix header
+||haitur.com/template/default/static/js/middle.js$script
 
 imomoe.*,xiamov.com,xxdm8.com##+js(ra, target, base[target])
 dyjihe.com,haicaoys.com,haitur.com,imomoe.*,kakadm.com,milimili.tv,qiqidongman.com,vodxc.in##+js(ra, target, a[href^="/"])
@@ -126,7 +124,6 @@ yatu.tv##+js(set,document.oncontextmenu,null)
 3z9e.cn
 7nsc.cn
 7b6l2j.cn
-anquanzhuomian.com
 ch-hr12333.com
 g1c5.com
 ieeod0.com
