@@ -1,12 +1,10 @@
-[Adblock Plus 2.0]
-! title: 乘风 广告过滤规则
-! Version: 202105281
+! Version: 202107293
 ! Expires: 2 days
 ! Homepage: https://bbs.kafan.cn/thread-1866845-1-1.html
 
 v.youku.com##.control-phonewatch,#right-title-ad-banner
 v.youku.com##+js(aeld,dblclick,ykplayer.switchFullscreen)
-!v.youku.com##+js(nano-stb)
+m.youku.com,v.youku.com##+js(set, Object.prototype.ad, undefined)
 ||atm.youku.com/
 ||cibntv.net/youku/$media
 ||valipl.cp31.ott.cibntv.net/$media
@@ -14,6 +12,7 @@ v.youku.com##+js(aeld,dblclick,ykplayer.switchFullscreen)
 ||sealine.youku.com/yk/*callback=adpagesdk$script
 
 iqiyi.com##div[data-adzone],#block-V
+iqiyi.com##+js(aeld,dblclick,t.fullToggle)
 !iqiyi.com##+js(nano-sib)
 iqiyi.com##+js(set, Object.prototype.parseXML, noopFunc)
 !||t7z.cupid.iqiyi.com/show$script,important
@@ -24,7 +23,7 @@ iqiyi.com##+js(set, Object.prototype.parseXML, noopFunc)
 show.ssports.com
 ||ssports.iqiyi.com/app/$object-subrequest
 
-qq.com##.mod_ad, .txp_ad
+qq.com##.mod_ad, .txp_ad, div.l_qq_com
 v.qq.com,sports.qq.com##+js(json-prune,ad,vinfo)
 v.qq.com,sports.qq.com##+js(nano-sib, \u5012\u8ba1\u65f6)
 @@||video.qq.com/fcgi-bin/
@@ -36,6 +35,7 @@ scorecardresearch.com
 tencentmind.com
 xtgreat.com
 
+@@||g.w.bilicdn1.com/
 bilibili.com##.gg-floor-module,#slide_ad,#slide_ad+a[data-target-url]
 ||api.bilibili.com/x/web-show/res/loc?pf=$~script
 ||hdslb.com/bfs/sycp/creative_img/$image
@@ -43,8 +43,8 @@ bilibili.com##.gg-floor-module,#slide_ad,#slide_ad+a[data-target-url]
 acfun.cn##.pause-display-container,#ad-comment,#ad-player-view
 ||aixifan.com/static/*/appGuide/
 
+cctv.com,ddrk.me,miguvideo.com##+js(aeld,dblclick,isImmediatePropagationStopped)
 cctv.com###bgAd_div
-cctv.com,ddrk.me##+js(aeld,dblclick,isImmediatePropagationStopped)
 ||imall.cctv.com/$subdocument
 ||bjcathay.com/
 !||player.cntv.cn/h5vod/$script
@@ -96,51 +96,77 @@ huya.com###hy-ad,#hy-ab,#huya-ab
 
 ||pub.funshion.com
 
+youtube.com##.masthead-ad-control, .ad-div, .pyv-afc-ads-container, #promotion-shelf
+*_ad_$media,domain=youtube.com,3p
+youtube.com##ytd-video-masthead-ad-advertiser-info-renderer, ytm-promoted-sparkles-web-renderer
+youtube.com,youtube-nocookie.com##+js(set, Object.prototype.adPlacements, undefined)
+youtube.com,youtube-nocookie.com##+js(set, Object.prototype.playerAds, undefined)
+||youtube.com/pagead/
+||youtube.com/ptracking?
+||google.*/pagead/
+||gstatic.com/shopping?
+
 */preroll/$media,domain=91porn.com
 ||91p20.space^
 ||waust.at^
+
+agefans.cc##+js(noeval-if, devtoolsDetector)
+||pstatp.com/origin/$image,domain=agefans.cc|88kan.tv
 
 dililitv.cc,lzvod.net##+js(aeld,dblclick,dp.fullScreen.request)
 ||www.dililitv.cc/*.php?ad=$script
 js.dilidd.com
 dililitv.cc,hmtv.me,imeiju.io##+js(acis,Object.defineProperty,location.href)
 
-dyjihe.com##.tempWrap
+dyjihe2.com##.tempWrap
 
-haitur.com,haicaoys.com##.dplayer-web-fullscreen-fix .float-box
-haitur.com##.container:style(max-width:90%!important;width:90%!important)
-haitur.com##.left-content:style(width:77%!important)
-haitur.com##.dplayer-web-fullscreen-fix header
-||haitur.com/template/default/static/js/middle.js$script
+*$3p,popup,domain=haitum.com
+haitum.com,haicaoys.com##.dplayer-web-fullscreen-fix .float-box
+haitum.com##.container:style(max-width:90%!important;width:90%!important)
+haitum.com##.left-content:style(width:77%!important)
+haitum.com##.dplayer-web-fullscreen-fix header
+thanosofcos5.com
+fieldofbachus.com
+||haitum.com/template/default/static/js/middle.js$script
 
 imomoe.*,xiamov.com,xxdm8.com##+js(ra, target, base[target])
-dyjihe.com,haicaoys.com,haitur.com,imomoe.*,kakadm.com,milimili.tv,qiqidongman.com,vodxc.in##+js(ra, target, a[href^="/"])
+88kan.tv,dyjihe.com,haicaoys.com,haitum.com,imomoe.*,kakadm.com,milimili.*,qiqidongman.com,rijutv.co,vodxc.*##+js(ra, target, a[href^="/"])
 ||alicdn.com/$image,domain=api.xiaomingming.org
 imomoe.*###adl,#adr
 
+nunuyy.cc##video:style(max-height:100% !important)
+@@||cdn.jsdelivr.net/$script,domain=nunuyy.cc
+*$3p,script,domain=nunuyy.cc
+adx1.com
+ancheonyo.fun
+andcanbere.fun
+envyindebted.com
+freychang.fun
+in-page-push.com
+
 yatu.tv##.dplayer-web-fullscreen-fix #tburl,#loadtop,[id^=myas],#myds1,#daohang
-yatu.tv##+js(set,document.oncontextmenu,null)
+yatu.tv,yhdm5.com##+js(set,document.oncontextmenu,null)
 ||tracker.$xhr,websocket,script,ping
 3z9e.cn
 7nsc.cn
 7b6l2j.cn
-ch-hr12333.com
-g1c5.com
-ieeod0.com
-fourier.taobao.com
-v4dwkcv.com
-weizhenwx.com
-youle55.com
-
 bmbaike.cn
 buzx53.cn
+ch-hr12333.com
 cqqc3.com
 dacedsfa.cn
+g1c5.com
+ieeod0.com
+nd2z41.cn
+onenews.vip
 qdwght.com
 quickapp.cn
+v4dwkcv.com
+weizhenwx.com
 xcsci.cn
 xixiqiu.com
 xv5b.com
 xz6d.com
+youle55.com
 ||www.yatu.tv:88/image/*.gif^$image
 ||www.yatu.tv:88/m/images/$image
